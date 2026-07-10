@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  vpn-client:
+    build: .
+    container_name: my-vpn-client
+    privileged: true
+    network_mode: "host"
+    restart: always
+    volumes:
+      - /lib/modules:/lib/modules
+    environment:
+      # ⚠️ 注意：直接把在服务端 Web 后台新生成的明文配置，完整复制填入到下方，服务器IP填写进去
+      - CONF=[Interface]
+        PrivateKey = <此处替换为从控制台拿到的客户端私钥>
+        Address = 10.0.0.2/8
+        DNS = 114.114.114.114
+
+        [Peer]
+        PublicKey = <此处替换为从控制台拿到的服务端公钥>
+        Endpoint = <你的VPS美国IP>:51820
+        AllowedIPs = 10.0.0.0/8
+        PersistentKeepalive = 25
