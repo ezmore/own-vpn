@@ -27,7 +27,7 @@ def index():
     html = """
     <!DOCTYPE html>
     <html>
-    <head><title>飞鼠式网状自建组网后台</title><meta charset="utf-8">
+    <head><title>Own-VPN异地组网后台</title><meta charset="utf-8">
     <style>body{font-family:-apple-system,sans-serif;margin:40px;background:#fafafa;color:#333;}
     .box{background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.05);margin-bottom:20px;}
     input,button{padding:8px 12px;margin:5px;border:1px solid #ddd;border-radius:4px;}
